@@ -25,8 +25,8 @@ Projeto desenvolvido como parte de um desafio técnico.
 
 1. Clone o repositório:
    ```bash
-    git clone https://github.com/seu-usuario/locadora-equipamentos.git
-    cd locadora-equipamentos
+    git clone https://github.com/seu-usuario/equipment-rent.git
+    cd equipment-rent
    ```
 2. Instale as dependências PHP e JS::
    ```bash
