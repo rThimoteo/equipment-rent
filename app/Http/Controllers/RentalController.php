@@ -85,8 +85,6 @@ class RentalController extends Controller
             'value' => $value,
         ]);
 
-        logger($rental);
-
         return redirect()->route('rentals.index')->with('success', 'Locação atualizada com sucesso.');
     }
 

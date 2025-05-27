@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\EquipmentAvailable;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRentalRequest extends FormRequest
@@ -22,7 +23,11 @@ class StoreRentalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'equipment_id' => 'required|exists:equipments,id',
+            'equipment_id' => [
+                'required',
+                'exists:equipments,id',
+                new EquipmentAvailable($this->start_date, $this->end_date)
+            ],
             'start_date' => 'required|date|before:end_date',
             'end_date' => 'required|date|after:start_date',
         ];

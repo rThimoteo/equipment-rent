@@ -6,6 +6,7 @@ use App\Models\Equipment;
 use App\Models\Rental;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class RentalControllerTest extends TestCase
@@ -21,7 +22,7 @@ class RentalControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]
     public function it_creates_a_rental()
     {
         $equipment = Equipment::factory()->create(['daily_value' => 100]);
@@ -36,7 +37,7 @@ class RentalControllerTest extends TestCase
         $this->assertDatabaseHas('rentals', ['equipment_id' => $equipment->id]);
     }
 
-    /** @test */
+    #[Test]
     public function it_lists_rentals()
     {
         Rental::factory()->count(2)->create();
@@ -45,7 +46,7 @@ class RentalControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]
     public function it_edits_a_rental()
     {
         $rental = Rental::factory()->create([
@@ -65,7 +66,7 @@ class RentalControllerTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[Test]
     public function it_cancels_a_rental()
     {
         $rental = Rental::factory()->create();

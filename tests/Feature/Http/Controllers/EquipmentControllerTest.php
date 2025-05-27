@@ -6,6 +6,7 @@ use App\Models\Equipment;
 use App\Models\Rental;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class EquipmentControllerTest extends TestCase
@@ -21,7 +22,7 @@ class EquipmentControllerTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_create_an_equipment()
     {
         $equipment = Equipment::create([
@@ -33,7 +34,7 @@ class EquipmentControllerTest extends TestCase
         $this->assertDatabaseHas('equipments', ['name' => 'Gerador']);
     }
 
-    /** @test */
+    #[Test]
     public function it_lists_equipments()
     {
         Equipment::factory()->count(3)->create();
@@ -43,7 +44,7 @@ class EquipmentControllerTest extends TestCase
         $response->assertSeeText('Equipamentos');
     }
 
-    /** @test */
+    #[Test]
     public function it_filters_available_equipments_by_date()
     {
         $missingEquipment = Equipment::factory()->create();
