@@ -1,6 +1,6 @@
 # Sistema de Locação de Equipamentos
 
-Projeto desenvolvido como parte de um desafio técnico.
+Aplicação web para gerenciamento de locações de equipamentos. Permite cadastrar itens, verificar disponibilidade por período e registrar locações com cálculo automático de valores.
 
 ## Tecnologias Utilizadas
 
@@ -8,7 +8,7 @@ Projeto desenvolvido como parte de um desafio técnico.
 - PHP 8.4
 - MySQL
 - jQuery
-- Tailwind CSS (substituindo o Bootstrap conforme sugestão pessoal)
+- Tailwind CSS
 
 ## Funcionalidades
 
@@ -25,7 +25,7 @@ Projeto desenvolvido como parte de um desafio técnico.
 
 1. Clone o repositório:
    ```bash
-    git clone https://github.com/seu-usuario/equipment-rent.git
+    git clone https://github.com/rThimoteo/equipment-rent.git
     cd equipment-rent
    ```
 2. Instale as dependências PHP e JS::
